@@ -33,41 +33,27 @@ fitur = [
     'REEFER_20', 'REEFER_40', 'Shore_Connection'
 ]
 
-def label_hijau(teks):
-    return f"<span style='color:#0B9D45; font-weight:bold;'>{teks}</span>"
-
 # Pilih kapal
-vessel = st.selectbox(
-    label_hijau("VESSEL"), 
-    sorted(df_rute["VESSEL"].unique()), 
-    format_func=str,
-    key="vessel",
-)
-
+vessel = st.selectbox("VESSEL", sorted(df_rute["VESSEL"].unique()))
 
 # Filter rute sesuai kapal
 available_routes = df_rute[df_rute["VESSEL"] == vessel]["Rute"].unique()
-rute = st.selectbox(
-    label_hijau("RUTE"), 
-    sorted(available_routes),
-    key="rute"
-)
-st.markdown("<span style='color:#0B9D45; font-weight:bold;'>RUTE</span>", unsafe_allow_html=True)
-available_routes = df_rute[df_rute["VESSEL"] == vessel]["Rute"].unique()
-rute = st.selectbox("", sorted(available_routes))
+rute = st.selectbox("RUTE", sorted(available_routes))
+
 # Input fitur lain
-duration_route = st.number_input(label_hijau("Durations per rute (hours)"), value=0)
-total_load = st.number_input(label_hijau("Total Load A/E (kWH)"), value=0)
-genset_load = st.number_input(label_hijau("GENSET LOAD"), value=0)
-duration_port = st.number_input(label_hijau("Duration at port (hours)"), value=0)
-ae_parallel = st.number_input(label_hijau("AE Pararel Duration"), value=0)
-maneuver_time = st.number_input(label_hijau("Maneuvering Time (hours)"), value=0)
-durasi_labuh = st.number_input(label_hijau("Durasi Labuh (hours)"), value=0)
-crane_duration = st.number_input(label_hijau("Crane Duration"), value=0)
-total_crane = st.number_input(label_hijau("Total Crane Operated"), value=0)
-reefer_20 = st.number_input(label_hijau("Reefer 20"), value=0)
-reefer_40 = st.number_input(label_hijau("Reefer 40"), value=0)
-shore_conn = st.selectbox(label_hijau("Shore Connection"), [0, 1])
+duration_route = st.number_input("Durations per rute (hours)", value=0)
+total_load = st.number_input("Total Load A/E (kWH)", value=0)
+genset_load = st.number_input("GENSET LOAD", value=0)
+duration_port = st.number_input("Duration at port (hours)", value=0)
+ae_parallel = st.number_input("AE Pararel Duration", value=0)
+maneuver_time = st.number_input("Maneuvering Time (hours)", value=0)
+durasi_labuh = st.number_input("Durasi Labuh (hours)", value=0)
+crane_duration = st.number_input("Crane Duration", value=0)
+total_crane = st.number_input("Total Crane Operated", value=0)
+reefer_20 = st.number_input("Reefer 20", value=0)
+reefer_40 = st.number_input("Reefer 40", value=0)
+shore_conn = st.selectbox("Shore Connection", [0, 1])
+
 if st.button("Prediksi",type="primary"):
     # Encode
     vessel_enc = le_vessel.transform([vessel])[0]
