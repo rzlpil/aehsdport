@@ -5,3 +5,4 @@ pandas
 numpy
 joblib
 openpyxl>=3.1.2
+xlrd
