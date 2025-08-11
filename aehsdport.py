@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib, gzip
 
-st.set_page_config(page_title="Prediksi Konsumsi A/E HSD Kapal", page_icon="🚢🛢️", layout="centered")
+st.set_page_config(page_title="Prediksi Konsumsi A/E HSD Kapal di Port", page_icon="🚢🛢️", layout="centered")
 
 # Tambahkan logo dan judul
 col1, col2 = st.columns([1, 9])
@@ -11,7 +11,7 @@ with col1:
 with col2:
     st.markdown("""
         <h1 style='color:#0b9d45; font-size: 36px; margin-bottom: 0;'>Prediksi Konsumsi A/E HSD</h1>
-        <p style='font-size:18px; color:gray;'>Prediksi konsumsi bahan bakar auxiliary engine HSD kapal</p>
+        <p style='font-size:18px; color:gray;'>Prediksi konsumsi bahan bakar auxiliary engine HSD kapal di Port</p>
     """, unsafe_allow_html=True)
     
 # --- Load model & encoder ---
