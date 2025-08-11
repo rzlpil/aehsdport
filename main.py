@@ -54,7 +54,7 @@ reefer_20 = st.number_input("Reefer 20", value=0)
 reefer_40 = st.number_input("Reefer 40", value=0)
 shore_conn = st.selectbox("Shore Connection", [0, 1])
 
-if st.button("Prediksi"):
+if st.button("Prediksi",type="primary"):
     # Encode
     vessel_enc = le_vessel.transform([vessel])[0]
     rute_enc = le_rute.transform([rute])[0]
