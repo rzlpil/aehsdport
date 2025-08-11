@@ -50,8 +50,8 @@ maneuver_time = st.number_input("Maneuvering Time (hours)", value=0)
 durasi_labuh = st.number_input("Durasi Labuh (hours)", value=0)
 crane_duration = st.number_input("Crane Duration", value=0)
 total_crane = st.number_input("Total Crane Operated", value=0)
-reefer_20 = st.number_input("Reefer 20", value=0)
-reefer_40 = st.number_input("Reefer 40", value=0)
+reefer_20 = st.number_input('Reefer 20"', value=0)
+reefer_40 = st.number_input('Reefer 40"', value=0)
 shore_conn = st.selectbox("Shore Connection", [0, 1])
 
 if st.button("Prediksi",type="primary"):
