@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
-import joblib
+import joblib, gzip
 
 # --- Load model & encoder ---
-model = joblib.load("model.pkl")
+with gzip.open("model.pkl.gz", "rb") as f:
+    model = joblib.load(f)
 scaler_y = joblib.load("scaler_y.pkl")
 le_vessel = joblib.load("le_vessel.pkl")
 le_rute = joblib.load("le_rute.pkl")
