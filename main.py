@@ -2,6 +2,18 @@ import streamlit as st
 import pandas as pd
 import joblib, gzip
 
+st.set_page_config(page_title="Prediksi Konsumsi A/E HSD Kapal", page_icon="🚢🛢️", layout="centered")
+
+# Tambahkan logo dan judul
+col1, col2 = st.columns([1, 9])
+with col1:
+    st.image("Logospil.png", width=100)  # Ganti nama file jika perlu
+with col2:
+    st.markdown("""
+        <h1 style='color:#0b9d45; font-size: 36px; margin-bottom: 0;'>Prediksi Konsumsi A/E HSD</h1>
+        <p style='font-size:18px; color:gray;'>Prediksi konsumsi bahan bakar auxiliary engine HSD kapal</p>
+    """, unsafe_allow_html=True)
+    
 # --- Load model & encoder ---
 with gzip.open("model.pkl.gz", "rb") as f:
     model = joblib.load(f)
@@ -20,8 +32,6 @@ fitur = [
     'CRANE_DURATION', 'TOTAL_CRANE_OPERATED',
     'REEFER_20', 'REEFER_40', 'Shore_Connection'
 ]
-
-st.title("Prediksi Konsumsi A/E HSD Kapal 🚢")
 
 # Pilih kapal
 vessel = st.selectbox("VESSEL", sorted(df_rute["VESSEL"].unique()))
