@@ -44,6 +44,7 @@ vessel = st.selectbox(
     key="vessel",
 )
 
+
 # Filter rute sesuai kapal
 available_routes = df_rute[df_rute["VESSEL"] == vessel]["Rute"].unique()
 rute = st.selectbox(
@@ -51,7 +52,9 @@ rute = st.selectbox(
     sorted(available_routes),
     key="rute"
 )
-
+st.markdown("<span style='color:#0B9D45; font-weight:bold;'>RUTE</span>", unsafe_allow_html=True)
+available_routes = df_rute[df_rute["VESSEL"] == vessel]["Rute"].unique()
+rute = st.selectbox("", sorted(available_routes))
 # Input fitur lain
 duration_route = st.number_input(label_hijau("Durations per rute (hours)"), value=0)
 total_load = st.number_input(label_hijau("Total Load A/E (kWH)"), value=0)
