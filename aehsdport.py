@@ -82,4 +82,4 @@ if st.button("Prediksi",type="primary"):
         y_pred_scaled.reshape(-1, 1)
     ).ravel()[0]
 
-    st.success(f"Prediksi konsumsi MFO (real): {y_pred_real:,.2f} Liter")
+    st.success(f"Prediksi konsumsi HSD at PORT (real): {y_pred_real:,.2f} Liter")
