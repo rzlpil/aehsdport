@@ -15,8 +15,7 @@ with col2:
     """, unsafe_allow_html=True)
     
 # --- Load model & encoder ---
-with gzip.open("model.pkl.gz", "rb") as f:
-    model = joblib.load(f)
+model = joblib.load("extra_trees_tuned.pkl.xz")
 scaler_y = joblib.load("scaler_y.pkl")
 le_vessel = joblib.load("le_vessel.pkl")
 le_rute = joblib.load("le_rute.pkl")
