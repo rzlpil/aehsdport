@@ -17,8 +17,8 @@ with col2:
 # --- Load model & encoder ---
 model = joblib.load("extra_trees_tuned.pkl.xz")
 scaler_y = joblib.load("scaler_y.pkl")
-le_vessel = joblib.load("le_vessel.pkl")
-le_rute = joblib.load("le_rute.pkl")
+le_vessel = joblib.load("le_vessel (1).pkl")
+le_rute = joblib.load("le_rute (1).pkl")
 
 # --- Load data rute tiap kapal ---
 df_rute = pd.read_excel("data rute tiap kapal.xlsx")
