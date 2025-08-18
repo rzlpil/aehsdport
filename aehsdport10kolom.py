@@ -25,7 +25,6 @@ df_rute = pd.read_excel("data rute tiap kapal.xlsx")
 # Urutan fitur persis seperti training
 fitur = [
     'VESSEL_ENC', 'RUTE_ENC',
-    'Total_Load_A/E_(kWH)', 'GENSET_LOAD',
     'DURATION_AT_PORT_(HOURS)', 'AE_PARAREL_DURATION',
     'MANEUVERING_TIME_(HOURS)', 'Durasi_Labuh_(hours)',
     'CRANE_DURATION', 'TOTAL_CRANE_OPERATED',
