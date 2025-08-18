@@ -15,7 +15,7 @@ with col2:
     """, unsafe_allow_html=True)
 
 # --- Load model & encoder ---
-model = joblib.load("extra_treesbased_tanpa durations.pkl.xz")
+model = joblib.load("extra_treesbased_hanya10kolom.pkl.xz")
 le_vessel = joblib.load("le_vessel.pkl")  # pastikan nama file sesuai
 le_rute = joblib.load("le_rute.pkl")      # pastikan nama file sesuai
 
