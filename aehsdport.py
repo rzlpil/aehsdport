@@ -57,7 +57,7 @@ with col2:
     reefer_20 = st.number_input('Reefer 20"', value=0, step=1)
     reefer_40 = st.number_input('Reefer 40"', value=0, step=1)
     shore_conn = st.selectbox("Shore Connection", [False, True])
-    shore_conn = shore_conn.astype(int)
+    shore_conn = int(shore_conn)
 
 
 if st.button("Prediksi", type="primary"):
