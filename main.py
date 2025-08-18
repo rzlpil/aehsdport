@@ -4,6 +4,7 @@ pages = {
     "Menu": [
         st.Page("aehsdport.py", title="A/E HSD at Port"),
         st.Page("aehsdporttanpaduration.py", title="A/E HSD at Port tanpa duration"),
+        st.Page("aehsdport10kolom.py", title="A/E HSD at Port 10 kolom"),
         st.Page("memfo.py", title="M/E MFO"),
     ]
 }
