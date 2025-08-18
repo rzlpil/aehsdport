@@ -53,10 +53,11 @@ with col1:
 with col2:
     durasi_labuh = st.number_input("Durasi Labuh (hours)", value=0.0, step=0.1)
     crane_duration = st.number_input("Crane Duration", value=0.0, step=0.1)
-    total_crane = st.number_input("Total Crane Operated", value=0.0, step=0.1)
-    reefer_20 = st.number_input('Reefer 20"', value=0.0, step=0.1)
-    reefer_40 = st.number_input('Reefer 40"', value=0.0, step=0.1)
-    shore_conn = st.selectbox("Shore Connection", [0, 1])
+    total_crane = st.number_input("Total Crane Operated", value=0, step=1)
+    reefer_20 = st.number_input('Reefer 20"', value=0, step=1)
+    reefer_40 = st.number_input('Reefer 40"', value=0, step=1)
+    shore_conn = st.selectbox("Shore Connection", [False, True])
+    shore_conn = shore_conn.astype(int)
 
 
 if st.button("Prediksi", type="primary"):
